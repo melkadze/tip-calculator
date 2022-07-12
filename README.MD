@@ -40,8 +40,6 @@ Here's a walkthrough of implemented user stories:
 
 ## Notes
 
-Describe any challenges encountered while building the app. (using real iphoen)
-
 While building the app, one of the challenges I encountered was getting the light/dark mode to apply to all views.
 I wanted to specifically use the "Show Detail" segue instead of the "Show" segue for my settings and options pages (which pop up from the top while keeping the original view partially visible) as they would make the app feel more cohesive, but this made it so that viewWillAppear did not trigger when returning to the main view.
 I spent a lot of time reading documentation in an effort to resolve this, and was able to get it to work by manually triggering the viewWillAppear property of the main view from the settings view (as this is the one which allows changing light/dark mode) by using the presentingViewController property.
