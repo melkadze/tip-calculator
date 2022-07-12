@@ -13,6 +13,16 @@ class AboutViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // set theme
+        switch UserDefaults.standard.integer(forKey: "theme") {
+        case 0:
+            overrideUserInterfaceStyle = .light
+        case 2:
+            overrideUserInterfaceStyle = .dark
+        default: // case 1, or any other (erraneous) value
+            overrideUserInterfaceStyle = .unspecified
+        }
     }
     
 

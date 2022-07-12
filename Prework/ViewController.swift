@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var splitNumberLabel: UILabel!
     @IBOutlet weak var splitTotalCostLabel: UILabel!
     @IBOutlet weak var splitTotalInfoLabel: UILabel!
+    @IBOutlet weak var currencyLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,6 +99,8 @@ class ViewController: UIViewController {
         if (UserDefaults.standard.bool(forKey: "splitting")) {
             splitTotalCostLabel.text = String(format: currency + "%.2f", totalBill / splitControl.value)
         }
+        
+        currencyLabel.text = currency
     }
     
     @IBAction func updateSlider(_ sender: Any) {
@@ -116,6 +119,8 @@ class ViewController: UIViewController {
         if (UserDefaults.standard.bool(forKey: "splitting")) {
             splitTotalCostLabel.text = String(format: currency + "%.2f", totalBill / Float(splitControl.value))
         }
+        
+        currencyLabel.text = currency
     }
     
     @IBAction func billAmountChanged(_ sender: Any) {

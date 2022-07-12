@@ -96,13 +96,18 @@ class SettingsViewController: UIViewController {
         UserDefaults.standard.set(themeControl.selectedSegmentIndex, forKey: "theme")
         UserDefaults.standard.synchronize()
         
-        switch themeControl.selectedSegmentIndex {
-        case 0:
-            overrideUserInterfaceStyle = .light
-        case 2:
-            overrideUserInterfaceStyle = .dark
-        default: // case 1, or any other (erraneous) value
-            overrideUserInterfaceStyle = .unspecified
+        
+        if let window = UIApplication.shared.keyWindow {
+            UIView.transition (with: window, duration: 0.4, options: [.curveEaseOut, .transitionCrossDissolve], animations: {
+                    switch self.themeControl.selectedSegmentIndex {
+                    case 0:
+                        self.overrideUserInterfaceStyle = .light
+                    case 2:
+                        self.overrideUserInterfaceStyle = .dark
+                    default: // case 1, or any other (erraneous) value
+                        self.overrideUserInterfaceStyle = .unspecified
+                    }
+            }, completion: nil)
         }
     }
     
