@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C53F5EA0287DD4C9006F9EB6 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53F5E9F287DD4C9006F9EB6 /* AboutViewController.swift */; };
 		C5F72216287C728900BEAAA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F72215287C728900BEAAA8 /* AppDelegate.swift */; };
 		C5F72218287C728900BEAAA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F72217287C728900BEAAA8 /* SceneDelegate.swift */; };
 		C5F7221A287C728900BEAAA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F72219287C728900BEAAA8 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 		C5F7222D287C728A00BEAAA8 /* PreworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7222C287C728A00BEAAA8 /* PreworkTests.swift */; };
 		C5F72237287C728A00BEAAA8 /* PreworkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F72236287C728A00BEAAA8 /* PreworkUITests.swift */; };
 		C5F72239287C728A00BEAAA8 /* PreworkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F72238287C728A00BEAAA8 /* PreworkUITestsLaunchTests.swift */; };
+		C5F72246287C906300BEAAA8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F72245287C906300BEAAA8 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C53F5E9F287DD4C9006F9EB6 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C5F72212287C728900BEAAA8 /* Prework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F72215287C728900BEAAA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5F72217287C728900BEAAA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		C5F72232287C728A00BEAAA8 /* PreworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PreworkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F72236287C728A00BEAAA8 /* PreworkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreworkUITests.swift; sourceTree = "<group>"; };
 		C5F72238287C728A00BEAAA8 /* PreworkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreworkUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C5F72245287C906300BEAAA8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 		C5F72209287C728900BEAAA8 = {
 			isa = PBXGroup;
 			children = (
+				C53F5E9F287DD4C9006F9EB6 /* AboutViewController.swift */,
+				C5F72245287C906300BEAAA8 /* SettingsViewController.swift */,
 				C5F72214287C728900BEAAA8 /* Prework */,
 				C5F7222B287C728A00BEAAA8 /* PreworkTests */,
 				C5F72235287C728A00BEAAA8 /* PreworkUITests */,
@@ -261,6 +267,8 @@
 				C5F7221A287C728900BEAAA8 /* ViewController.swift in Sources */,
 				C5F72216287C728900BEAAA8 /* AppDelegate.swift in Sources */,
 				C5F72218287C728900BEAAA8 /* SceneDelegate.swift in Sources */,
+				C53F5EA0287DD4C9006F9EB6 /* AboutViewController.swift in Sources */,
+				C5F72246287C906300BEAAA8 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
