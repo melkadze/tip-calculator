@@ -83,8 +83,6 @@
 		C5F72209287C728900BEAAA8 = {
 			isa = PBXGroup;
 			children = (
-				C53F5E9F287DD4C9006F9EB6 /* AboutViewController.swift */,
-				C5F72245287C906300BEAAA8 /* SettingsViewController.swift */,
 				C5F72214287C728900BEAAA8 /* Prework */,
 				C5F7222B287C728A00BEAAA8 /* PreworkTests */,
 				C5F72235287C728A00BEAAA8 /* PreworkUITests */,
@@ -105,6 +103,8 @@
 		C5F72214287C728900BEAAA8 /* Prework */ = {
 			isa = PBXGroup;
 			children = (
+				C53F5E9F287DD4C9006F9EB6 /* AboutViewController.swift */,
+				C5F72245287C906300BEAAA8 /* SettingsViewController.swift */,
 				C5F72215287C728900BEAAA8 /* AppDelegate.swift */,
 				C5F72217287C728900BEAAA8 /* SceneDelegate.swift */,
 				C5F72219287C728900BEAAA8 /* ViewController.swift */,

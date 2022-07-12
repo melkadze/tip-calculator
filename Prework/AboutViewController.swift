@@ -8,13 +8,10 @@
 import UIKit
 
 class AboutViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
-        // set theme
+        // set theme once everything loads in
         switch UserDefaults.standard.integer(forKey: "theme") {
         case 0:
             overrideUserInterfaceStyle = .light
@@ -24,16 +21,4 @@ class AboutViewController: UIViewController {
             overrideUserInterfaceStyle = .unspecified
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

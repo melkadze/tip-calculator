@@ -5,14 +5,10 @@
 //  Created by Nick Melkadze on 7/11/22.
 //
 
-/// What has been implemented already:
-/// Normal tip function
-/// Setitngs menu
-///
-
 import UIKit
 
 class ViewController: UIViewController {
+    // set up all of our outlets
     @IBOutlet weak var billAmountTextField: UITextField!
     @IBOutlet weak var tipAmountLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
@@ -27,7 +23,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         // set title in Navigation Bar
         self.title = "Tip Calculator"
@@ -36,6 +31,7 @@ class ViewController: UIViewController {
         billAmountTextField.becomeFirstResponder()
     }
     
+    // unlike viewDidLoad, viewWillAppear also handles loading from the other two view controllers
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -49,7 +45,7 @@ class ViewController: UIViewController {
             overrideUserInterfaceStyle = .unspecified
         }
         
-        // set slider visibility
+        // set slider/segmented control visibility
         if (UserDefaults.standard.bool(forKey: "slider")) {
             tipControl.isHidden = true
             tipLabel.isHidden = false
@@ -76,12 +72,8 @@ class ViewController: UIViewController {
         }
     }
     
+    // calculate tip as in the demo case (segmented control)
     @IBAction func calculateTip(_ sender: Any) {
-        /// Our goals here:
-        /// 1. Get initial bill amount, and calculate tip (done)
-        /// 2. Calculate total cost (done)
-        /// 3. Update tip and total labels (done)
-        
         // Step 1 (calculate tip):
         let initialBill = Double(billAmountTextField.text!) ?? 0 // if the value does not exist, this uses 0
         let tipValues = [0.15, 0.18, 0.2]
@@ -96,18 +88,25 @@ class ViewController: UIViewController {
         tipAmountLabel.text = String(format: currency + "%.2f", tip)
         totalLabel.text = String(format: currency + "%.2f", totalBill)
         
+        // if we need to split the bill, do so
         if (UserDefaults.standard.bool(forKey: "splitting")) {
             splitTotalCostLabel.text = String(format: currency + "%.2f", totalBill / splitControl.value)
         }
         
+        // set the label to match current currency
         currencyLabel.text = currency
     }
     
+    // handles slider updates, and calculates tip from them
     @IBAction func updateSlider(_ sender: Any) {
+        // set the tip percent label
         tipLabel.text = String(Int(tipSlider.value)) + "%"
         
+        // Step 1 (calculate tip):
         let initialBill = Float(billAmountTextField.text!) ?? 0 // if the value does not exist, this uses 0
         let tip = initialBill * round(tipSlider.value) / 100
+        
+        // Step 2 (get total):
         let totalBill = initialBill + tip
         
         // Step 3 (update labels):
@@ -116,24 +115,27 @@ class ViewController: UIViewController {
         tipAmountLabel.text = String(format: currency + "%.2f", tip)
         totalLabel.text = String(format: currency + "%.2f", totalBill)
         
+        // if we need to split the bill, do so
         if (UserDefaults.standard.bool(forKey: "splitting")) {
             splitTotalCostLabel.text = String(format: currency + "%.2f", totalBill / Float(splitControl.value))
         }
         
+        // set the label to match current currency
         currencyLabel.text = currency
     }
     
+    // every time the bill amount changes, update the tip
     @IBAction func billAmountChanged(_ sender: Any) {
+        // updates tip using either slider or segmented control based on UserDefaults
         UserDefaults.standard.bool(forKey: "slider") ? updateSlider(UIButton.self) : calculateTip(UIButton.self)
     }
     
+    // handle every time the number of people to split between changes
     @IBAction func splitControlUpdated(_ sender: Any) {
+        // update the number of people, and make sure to say "person" if it is 1, and "people" in all other cases
         splitNumberLabel.text = "Split bill between " + String(Int(splitControl.value)) + (splitControl.value == 1 ? " person" : " people")
         
-        if (UserDefaults.standard.bool(forKey: "slider")) {
-            updateSlider(UIButton.self)
-        } else {
-            calculateTip(UIButton.self)
-        }
+        // updates tip using either slider or segmented control based on UserDefaults
+        UserDefaults.standard.bool(forKey: "slider") ? updateSlider(UIButton.self) : calculateTip(UIButton.self)
     }
 }
