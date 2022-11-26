@@ -10,15 +10,15 @@ The following functionality is complete:
 * [X] User can select between tip percentages by tapping different values on the segmented control and the tip value is updated accordingly
 * [X] UI animations
 * [X] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
-- [X] Currency choices
-- [X] Light and dark (and auto) modes
-- [X] Slider control
-- [X] Settings page
-- [X] About page
-- [X] Custom app icon
-- [X] Decimal keyboard
-- [X] Settings persistence (saved in UserDefaults)
-- [X] Party splitting
+* [X] Currency choices
+* [X] Light and dark (and auto) modes
+* [X] Slider control
+* [X] Settings page
+* [X] About page
+* [X] Custom app icon
+* [X] Decimal keyboard
+* [X] Settings persistence (saved in UserDefaults)
+* [X] Party splitting
 
 ## Video Walkthrough
 
